@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crop Scan | CropGuard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+🌿 CropGuard
+</div>
+
+<ul class="nav-links">
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('home') }}#features">Features</a></li>
+<li><a href="{{ url_for('home') }}#how">How It Works</a></li>
+</ul>
+
+<!-- Translator -->
+<div id="google_translate_element"></div>
+
+</nav>
+
+
+<!-- SCAN SECTION -->
+
+<section class="scan-section">
+
+<div class="scan-container">
+
+<h1>Upload Leaf Image</h1>
+
+<p>
+Upload a crop or leaf image and our AI will analyze it instantly.
+</p>
+
+
+
+<!-- IMAGE UPLOAD -->
+
+<div class="upload-box">
+
+<label for="imageUpload" class="upload-label">
+Click or Drag Image Here
+</label>
+
+<input type="file" name="image">
+<img id="previewImage" />
+
+</div>
+
+
+
+<!-- DISTRICT SELECT -->
+
+<select class="dropdown">
+<option>Select District</option>
+<option>Bangalore Urban</option>
+<option>Bangalore Rural</option>
+<option>Belagavi</option>
+<option>Ballari</option>
+<option>Bidar</option>
+<option>Chamarajanagar</option>
+<option>Chikkaballapur</option>
+<option>Chikkamagaluru</option>
+<option>Chitradurga</option>
+<option>Dakshina Kannada</option>
+<option>Davanagere</option>
+<option>Dharwad</option>
+<option>Gadag</option>
+<option>Hassan</option>
+<option>Haveri</option>
+<option>Kalaburagi</option>
+<option>Kodagu</option>
+<option>Kolar</option>
+<option>Koppal</option>
+<option>Mandya</option>
+<option>Mysuru</option>
+<option>Raichur</option>
+<option>Ramanagara</option>
+<option>Shivamogga</option>
+<option>Tumakuru</option>
+<option>Udupi</option>
+<option>Uttara Kannada</option>
+<option>Vijayapura</option>
+<option>Yadgir</option>
+</select>
+
+
+<!-- DETECT BUTTON -->
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+    <button type="submit" class="detect-btn">Detect Disease</button>
+
+</form>
+
+
+</div>
+
+</section>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,kn,hi,ta'
+        },
+        'google_translate_element'
+    );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div id="loading" style="display:none;">
+<p>Analyzing Crop Image...</p>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script>
+
+const imageUpload = document.getElementById("imageUpload");
+const previewImage = document.getElementById("previewImage");
+
+imageUpload.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(file){
+
+previewImage.style.display = "block";
+previewImage.src = URL.createObjectURL(file);
+
+}
+
+});
+
+</script>
+
+<script>
+
+document.querySelector(".upload-box").onclick = function(){
+
+document.getElementById("imageUpload").click();
+
+};
+
+</script>
+
+</body>
+</html>

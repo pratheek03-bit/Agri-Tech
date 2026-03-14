@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CropGuard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+🌿 CropGuard
+</div>
+
+<ul class="nav-links">
+<li><a href="#features">Features</a></li>
+<li><a href="#how">How It Works</a></li>
+<li><a href="#">Detect</a></li>
+
+</ul>
+
+<!--Translator-->
+<div id="google_translate_element"></div>
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<p class="tag">AI-Powered Crop Protection</p>
+
+<h1>
+Detect Crop Diseases <span>Before</span> They Spread
+</h1>
+
+<p class="description">
+Harness machine learning to identify plant diseases at early stages.
+Protect your harvest and farm smarter.
+</p>
+
+<div class="buttons">
+
+<a href="{{ url_for('scan') }}">
+<button class="scan-btn">Start Scanning →</button>
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES SECTION -->
+
+<section id="features" class="features">
+
+<h2>Everything You Need to Protect Your Crops</h2>
+
+<div class="feature-container">
+
+<div class="feature-card">
+<h3>Instant Leaf Scanning</h3>
+<p>Upload a photo of any leaf and get real-time disease detection identification with our advanced image recognition.</p>
+</div>
+
+<div class="feature-card">
+<h3>AI Powered Analysis</h3>
+<p>Deep learning models trained on thousands of crop images across 50+ disease classes for unmatched accuracy.</p>
+</div>
+
+<div class="feature-card">
+<h3>Early Detection</h3>
+<p>Catch infections at the earliest visible stage, give you time to act before crop loss occurs.</p>
+</div>
+
+<div class="feature-card">
+<h3>Treatment Recommendation </h3>
+<p>Get tailored treatment plans and preventive measures specific to the identified disease.</p>
+</div>
+
+<div class="feature-card">
+<h3>Works on Any Device </h3>
+<p>No special hardware needed - use your smartphone camera to scan crops right in the field.</p>
+</div>
+
+<div class="feature-card">
+<h3>Multi-Language Support </h3>
+<p>The system can translate content into regional languages such as Kannada, Hindi, Tamil, this makes the platform more user-friendly for farmer for different regions.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section id="how" class="how-it-works">
+
+    <div class="container">
+
+        <h2 class="section-title">From Photo to Diagnosis in Seconds</h2>
+        <p class="section-subtitle">
+            Four simple steps to identify and treat crop diseases.
+        </p>
+
+        <div class="steps-container">
+
+            <div class="steps-left">
+
+                <div class="step">
+                    <div class="icon">📷</div>
+                    <div>
+                        <h3>STEP 01</h3>
+                        <h4>Capture</h4>
+                        <p>Take a photo of the affected leaf using your phone camera.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="icon">⚙️</div>
+                    <div>
+                        <h3>STEP 02</h3>
+                        <h4>Analyze</h4>
+                        <p>Our AI model processes the image and identifies the disease pattern.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="icon">📄</div>
+                    <div>
+                        <h3>STEP 03</h3>
+                        <h4>Diagnose</h4>
+                        <p>Receive a detailed report with disease name, severity and confidence score.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="icon">🌱</div>
+                    <div>
+                        <h3>STEP 04</h3>
+                        <h4>Treat</h4>
+                        <p>Follow the recommended treatment plan to save your crops.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="steps-right">
+                <img src="image.jpeg" alt="Leaf Scan">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stats-container">
+
+        <div class="stat-box">
+            <h2>95%</h2>
+            <p>Detection Accuracy</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>38+</h2>
+            <p>Disease Classes</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>50K+</h2>
+            <p>Training Images</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>&lt;2s</h2>
+            <p>Analysis Time</p>
+        </div>
+
+    </div>
+
+</section>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,kn,hi,ta'
+        },
+        'google_translate_element'
+    );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
